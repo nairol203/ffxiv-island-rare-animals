@@ -26,7 +26,6 @@ export default function useTest() {
 				weatherMatch = true;
 			}
 
-			console.log(weatherStartHour);
 			// @ts-ignore
 			if (times[weatherStartHour]) {
 				timeMatch = true;
