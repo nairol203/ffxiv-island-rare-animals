@@ -12,7 +12,7 @@ export default {
 	1: {
 		//  Crab
 		targetWeather: 'Regnerisch',
-		leaveBefore: '11:00',
+		leaveBefore: '23:00',
 		times: {
 			0: true,
 			8: false,
