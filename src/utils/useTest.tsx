@@ -5,7 +5,7 @@ export default function useTest() {
 	const findWeather = (animal: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) => {
 		if (isNaN(animal)) return;
 
-		const { targetWeather } = animals[animal];
+		const { targetWeather, leaveBefore, times } = animals[animal];
 
 		let weatherStartTime = WeatherFinder.getWeatherTimeFloor(new Date()).getTime() + 1;
 		let weatherStartHour = WeatherFinder.getEorzeaHour(weatherStartTime);
@@ -15,18 +15,24 @@ export default function useTest() {
 		let tries = 0;
 		let matches = 0;
 		let weather = WeatherFinder.getWeather(weatherStartTime, zone);
-		let prevWeather = WeatherFinder.getWeather(weatherStartTime - 1, zone);
 
 		let list: JSX.Element[] = [];
 
-		while (tries < 100 && matches < 15) {
-			let weatherMatch = targetWeather === null;
+		while (tries < 1000 && matches < 15) {
+			let weatherMatch = false;
+			let timeMatch = false;
 
 			if (targetWeather === weather) {
 				weatherMatch = true;
 			}
 
-			if (weatherMatch) {
+			console.log(weatherStartHour);
+			// @ts-ignore
+			if (times[weatherStartHour]) {
+				timeMatch = true;
+			}
+
+			if (weatherMatch && timeMatch) {
 				const weatherDate = new Date(weatherStartTime);
 
 				list.push(
@@ -37,6 +43,7 @@ export default function useTest() {
 							{weatherStartHour}:00
 						</td>
 						<td>{weatherDate.toLocaleString().slice(0, weatherDate.toLocaleString().length - 3)}</td>
+						<td>{leaveBefore.length ? `Verlasse deine Insel vor ${leaveBefore} Eorza Zeit.` : '-'}</td>
 					</tr>
 				);
 				matches++;
@@ -45,7 +52,6 @@ export default function useTest() {
 			weatherStartTime += 8 * 175 * 1000; // Increment by 8 Eorzean hours
 			weatherStartHour = WeatherFinder.getEorzeaHour(weatherStartTime);
 
-			prevWeather = weather;
 			weather = WeatherFinder.getWeather(weatherStartTime, zone);
 			tries++;
 		}
