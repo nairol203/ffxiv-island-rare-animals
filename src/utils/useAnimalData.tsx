@@ -44,10 +44,11 @@ export default function useAnimalData() {
 						</td>
 						<td>
 							{weatherDate.toLocaleString().slice(0, weatherDate.toLocaleString().length - 3)}
-							{weatherDate.toDateString() === new Date().toDateString()}
-							<MediaQuery query='(min-width: 500px)' styles={{ marginLeft: '1em' }}>
-								<Badge>Heute</Badge>
-							</MediaQuery>
+							{weatherDate.toDateString() === new Date().toDateString() && (
+								<MediaQuery query='(min-width: 500px)' styles={{ marginLeft: '1em' }}>
+									<Badge>Heute</Badge>
+								</MediaQuery>
+							)}
 						</td>
 						<td>{leaveBefore.length ? `Verlasse deine Insel vor ${leaveBefore} Eorza Zeit.` : '-'}</td>
 					</tr>
