@@ -19,7 +19,6 @@ const Home: NextPage = () => {
 			<Space h='sm' />
 			<Select
 				placeholder='Wähle ein Tier aus!'
-				searchable
 				nothingFound='Nichts gefunden'
 				defaultValue={'0'}
 				data={[
