@@ -22,16 +22,16 @@ const Home: NextPage = () => {
 				nothingFound='Nichts gefunden'
 				defaultValue={'0'}
 				data={[
-					{ value: '0', label: 'Orney Karakul (20, 23)', group: 'Klein' },
-					{ value: '1', label: 'Beachcomb (17.8, 12.6) (00:00 - 03:00)', group: 'Klein' },
-					{ value: '2', label: 'Yellow Coblyn (27, 19)', group: 'Klein' },
-					{ value: '3', label: 'Twinklefleece (22.1, 20.8) (18:00 - 21:00)', group: 'Klein' },
+					{ value: '0', label: 'Karakul (20, 23)', group: 'Klein' },
+					{ value: '1', label: 'Strandräuber (17.8, 12.6) (00:00 - 03:00)', group: 'Klein' },
+					{ value: '2', label: 'Gelber Kobalos (27, 19)', group: 'Klein' },
+					{ value: '3', label: 'Funkelvlies (22.1, 20.8) (18:00 - 21:00)', group: 'Klein' },
 					{ value: '4', label: 'Paissa (24,28) (12:00 - 15:00)', group: 'Mittel' },
-					{ value: '5', label: 'Black Chocobo (13, 11)', group: 'Mittel' },
-					{ value: '6', label: 'Grand Buffalo (12, 17)', group: 'Groß' },
+					{ value: '5', label: 'Sczhwarzer Chocobo (13, 11)', group: 'Mittel' },
+					{ value: '6', label: 'Großer Büffel (12, 17)', group: 'Groß' },
 					{ value: '7', label: 'Goobbue (33, 16) (09:00 - 12:00)', group: 'Groß' },
 					{ value: '8', label: 'Alligator (17, 24) (06:00)', group: 'Groß' },
-					{ value: '9', label: 'Gold Back (31, 28)', group: 'Groß' },
+					{ value: '9', label: 'Goldrücken (31, 28)', group: 'Groß' },
 				]}
 				onChange={setValue}
 				transition='scale-y'
