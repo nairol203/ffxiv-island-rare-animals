@@ -1,8 +1,8 @@
 import WeatherFinder from './weather';
 import animals from '../data/animals';
-import { Badge, Space } from '@mantine/core';
+import { Badge, MediaQuery } from '@mantine/core';
 
-export default function useTest() {
+export default function useAnimalData() {
 	const findWeather = (animal: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) => {
 		if (isNaN(animal)) return;
 
@@ -44,7 +44,10 @@ export default function useTest() {
 						</td>
 						<td>
 							{weatherDate.toLocaleString().slice(0, weatherDate.toLocaleString().length - 3)}
-							{weatherDate.toDateString() === new Date().toDateString() && <Badge style={{ marginLeft: '1em' }}>Heute</Badge>}
+							{weatherDate.toDateString() === new Date().toDateString()}
+							<MediaQuery query='(min-width: 500px)' styles={{ marginLeft: '1em' }}>
+								<Badge>Heute</Badge>
+							</MediaQuery>
 						</td>
 						<td>{leaveBefore.length ? `Verlasse deine Insel vor ${leaveBefore} Eorza Zeit.` : '-'}</td>
 					</tr>

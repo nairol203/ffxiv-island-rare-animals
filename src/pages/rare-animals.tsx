@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import { Container, Select, Table, Title, Text, Space } from '@mantine/core';
 import { useState } from 'react';
-import useTest from '../utils/useTest';
+import useAnimalData from '../utils/useAnimalData';
 
 const Home: NextPage = () => {
 	const [value, setValue] = useState<string | null>('0');
-	const { findWeather } = useTest();
+	const { findWeather } = useAnimalData();
 
 	// @ts-ignore
 	const data = findWeather(parseInt(value));
