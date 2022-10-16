@@ -25,6 +25,7 @@ export default function App(props: AppProps) {
 				<meta name='twitter:image' content='https://island.nairol.me' />
 				<meta name='twitter:site' content='@nairol203' />
 				<meta name='twitter:creator' content='@nairol203' />
+				<meta name='twitter:card' content='summary' />
 			</Head>
 
 			<MantineProvider
